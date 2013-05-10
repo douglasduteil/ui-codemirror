@@ -65,9 +65,9 @@ module.exports = function (grunt) {
         ]
       },
       template : {
-        options : {processContent : (function(content){
+        options : {processContent : function(content){
           return grunt.template.process(content);
-        })},
+        }},
         files: [
           {src: ['out/.tmpl/index.tmpl'], dest: 'out/index.html'}
         ]
