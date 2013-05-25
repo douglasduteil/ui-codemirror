@@ -8,7 +8,7 @@ This generator use Grunt, AngularJS, RequireJS and jQuery.
 Add it as a submodule of your module.
 
 ```sh
-git submodule add git://github.com/douglasduteil/angular-ui-docs.git out
+git submodule add git://github.com/angular-ui/angular-ui-docs.git out
 ```
 
 **It's working with ssh deploy key !**
@@ -38,6 +38,7 @@ __Don't forget to create and push an orphan `gh-pages` branch.__
 
 ## Make your demo !
 
+Travis will automatically run `grunt build-doc` ! 
 First you need to generate the `index.html` using [grunt-contrib-copy](https://github.com/gruntjs/grunt-contrib-copy)
 
 ```Javascript
@@ -84,3 +85,4 @@ In this file you can use RequireJS, AngularJS and jQuery.
 I added a `requireCSS` as a HACK  'cause  it's home made...
 
 In bonus, the id of each section tag in the page are drawn into a _Module_ menu at the top right of the page.
+
