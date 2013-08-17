@@ -176,10 +176,11 @@ vendor_js=['http://codemirror.net/lib/codemirror.js', 'http://codemirror.net/mod
 <pre class="prettyprint">&lt;section ng-controller=&quot;CodemirrorCtrl&quot;&gt;
 
   &lt;div&gt;
-  &lt;textarea ui-codemirror=&quot;cmOption&quot; ng-model=&quot;cmModel&quot;&gt;&lt;/textarea&gt;
+    &lt;textarea ui-codemirror=&quot;cmOption&quot; ng-model=&quot;cmModel&quot;&gt;&lt;/textarea&gt;
   &lt;/div&gt;
-  &lt;select ng-model=&quot;mode&quot; ng-options=&quot;c for c in modes&quot; ng-change=&quot;modeChanged()&quot;&gt;
-  &lt;/select&gt;
+
+  &lt;select ng-model=&quot;mode&quot; ng-options=&quot;c for c in modes&quot; ng-change=&quot;modeChanged()&quot;&gt;&lt;/select&gt;
+
 &lt;/section&gt;</pre>
           </div>
         </tab>
