@@ -26,16 +26,29 @@ angular.module('ui.codemirror', [])
             var newValue = instance.getValue();
             if (newValue !== ngModel.$viewValue) {
               ngModel.$setViewValue(newValue);
-              if(!scope.$$phase){ scope.$apply(); }
             }
             if (typeof aEvent === "function") {
               aEvent(instance, changeObj);
+            }
+            if (!scope.$$phase) {
+              scope.$apply();
             }
           };
         };
 
         deferCodeMirror = function () {
           codeMirror = CodeMirror.fromTextArea(elm[0], opts);
+
+          if (angular.isDefined(scope[attrs.uiCodemirror])) {
+            scope.$watch(attrs.uiCodemirror, function (newValues) {
+              for (var key in newValues) {
+                if (newValues.hasOwnProperty(key)) {
+                  codeMirror.setOption(key, newValues[key]);
+                }
+              }
+            }, true);
+          }
+
           codeMirror.on("change", onChange(opts.onChange));
 
           for (var i = 0, n = events.length, aEvent; i < n; ++i) {
@@ -72,9 +85,16 @@ angular.module('ui.codemirror', [])
             scope.$watch(attrs.uiRefresh, function (newVal, oldVal) {
               // Skip the initial watch firing
               if (newVal !== oldVal) {
-                $timeout(function(){codeMirror.refresh();});
+                $timeout(function () {
+                  codeMirror.refresh();
+                });
               }
             });
+          }
+
+          // onLoad callback
+          if (angular.isFunction(opts.onLoad)) {
+            opts.onLoad(codeMirror);
           }
         };
 

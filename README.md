@@ -11,7 +11,7 @@ Add it as a bower component.
 bower install git://github.com/douglasduteil/angular-ui-docs.git
 ```
 or add to your `bower.json`
-```
+```Javascript
   "devDependencies": {
     "angular-ui-docs": "douglasduteil/angular-ui-docs"
   }
@@ -31,7 +31,7 @@ env:
 
 Then add the scripts and limit the build-able branches.
 
-```
+```yaml
 before_script: out/.travis/before_script.sh
 after_success: out/.travis/after_success.sh
 branches:
