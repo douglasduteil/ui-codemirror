@@ -6,8 +6,6 @@ angular.module('ui.codemirror', [])
   .directive('uiCodemirror', ['uiCodemirrorConfig', function (uiCodemirrorConfig) {
     'use strict';
 
-    var events = ["cursorActivity", "viewportChange", "gutterClick", "focus", "blur", "scroll", "update"];
-
     return {
       restrict: 'A',
       require: '?ngModel',
