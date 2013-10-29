@@ -3,7 +3,7 @@
  */
 angular.module('ui.codemirror', [])
   .constant('uiCodemirrorConfig', {})
-  .directive('uiCodemirror', ['uiCodemirrorConfig', '$timeout', function (uiCodemirrorConfig, $timeout) {
+  .directive('uiCodemirror', ['uiCodemirrorConfig', function (uiCodemirrorConfig) {
     'use strict';
 
     var events = ["cursorActivity", "viewportChange", "gutterClick", "focus", "blur", "scroll", "update"];
