@@ -27,6 +27,6 @@
   "devDependencies": {
     "angular-mocks": "~1.0.x",
     "angular-ui-bootstrap-bower": "~0.5.0",
-    "angular-ui-docs": "git://github.com/douglasduteil/angular-ui-docs.git#3c19ab2c376a483509cf326e11627237506905ae"
+    "angular-ui-docs": "git://github.com/douglasduteil/angular-ui-docs.git#1bb852fbfcf4fb9e6f6525440e2aa2b07e865ded"
   }
 }
