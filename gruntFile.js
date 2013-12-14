@@ -59,7 +59,7 @@ module.exports = function (grunt) {
       },
       demo: {
         files: ['demo/*'],
-        tasks: ['build:gh-pages']
+        tasks: ['jshint', 'build:gh-pages']
       }
     },
 

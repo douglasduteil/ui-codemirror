@@ -15,7 +15,8 @@
   "sub": true,
   "undef": true,
   "browser": true,
-  "quotmark": true,
+  "quotmark": "single",
+  "unused" : true,
   "globals": {
     "module"     : false,
     "angular"    : false,
