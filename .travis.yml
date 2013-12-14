@@ -1,7 +1,7 @@
 ---
 language: node_js
 node_js:
-- '0.8'
+- '0.10'
 before_install:
 - export DISPLAY=:99.0
 - sh -e /etc/init.d/xvfb start
@@ -9,11 +9,11 @@ before_install:
 - npm install
 - bower install --force
 - bower install --force
-before_script: ./bower_components/angular-ui-docs/.travis/before_script.sh
-after_success: ./bower_components/angular-ui-docs/.travis/after_success.sh
+before_script: ./node_modules/component-publisher/travis/authentication.sh
+after_success: grunt build:gh-pages publish:gh-pages build:bower publish:bower
 branches:
   only:
-  - develop
+  - publishing-dev-test
 script: grunt
 env:
   global:
