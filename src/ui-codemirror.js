@@ -56,7 +56,7 @@ angular.module('ui.codemirror', [])
 
             updateOptions(opts);
 
-            if (angular.isDefined(scope[iAttrs.uiCodemirror])) {
+            if (iAttrs.uiCodemirror) {
               scope.$watch(iAttrs.uiCodemirror, updateOptions, true);
             }
             // Specialize change event
